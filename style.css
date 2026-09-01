@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(-45deg,#ee7752,#e73c7e,#23a6d5,#23d5ab);
+    background-size: 400% 400%;
+    animation:gradientAnimation 15s ease infinite;   
+}
+@keyframes gradientAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.map-container {
+    flex: 2;
+    background:white;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+
+
+.info-card {
+    flex:1;
+    min-width: 280px;
+    background:white;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+    color:#2f3640;
+}
+
+.info-card p {
+    color:#718093;
+    line-height: 1.6;
+}
+
+/* 1. Varsayılan Gri Renk */
+#svg-turkey path {
+  fill: #cccccc !important;
+  stroke: #ffffff !important;
+  stroke-width: 1px;
+  transition: fill 0.15s ease;
+  cursor: pointer;
+}
+
+/* 2. Fare Üstündeyken (Mavi) */
+#svg-turkey path:hover {
+  fill: #00a8ff !important;
+}
+
+/* 3. Sadece .active Sınıfı Varsa (Kırmızı) */
+#svg-turkey path.active {
+  fill: #ff3333 !important;
+}
